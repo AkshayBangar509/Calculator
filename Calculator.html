@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<title> Calculator</title>
+<style>
+	table{
+		border:1px solid black;
+		width:300px;
+		height:200px;
+		margin:auto
+	}
+	
+	input[type="button"]{
+	
+		width:100%;
+		height:100%;
+		background-color: #42adf5; 
+		padding: 20px 50px; 
+		font-size:20px;
+		font-weight: bold;
+		border-radius: 6px; 
+		cursor:pointer
+		
+	}
+	input[type="button"]:hover{
+			background-color:green
+		
+	}
+	input[type="text"]{
+	
+		border-radius:4px;
+		    padding: 20px 50px; 
+			font-size: 24px; 
+            font-weight: bold;
+	}
+</style>
+<script>
+	
+	function display(val)
+	{
+
+    document.getElementById('result').value += val
+
+    return val
+			
+	}
+
+
+	function solve()
+	{
+
+    let x = document.getElementById('result').value
+
+    let y = eval(x);
+
+    document.getElementById('result').value = y
+
+    return y
+
+	}
+
+
+
+
+
+		function clearScreen()
+		{
+
+				document.getElementById('result').value = ''
+
+		}
+
+</script>
+
+
+</head>
+<body>
+
+	<table>
+		<form name="f1">
+		<tr>
+			<td  colspan="3"> <input type="text" id="result" /> </td>
+			<td> <input type="button" value="Clear" onclick="clearScreen()"/> </td>
+		</tr>
+		
+		<tr>
+			<td> <input type="button" value="1" onClick="display('1')" /></td>
+			<td>   <input type="button" value="2" class="button" onClick="display('2')"> </td>
+			<td> <input type="button" value="3" class="button" onClick="display('3')"> </td>
+			<td>  <input type="button" value="+" class="operator" onClick="display('+')"></td>
+		</tr>
+	
+		<tr>
+			<td> <input type="button" value="4" class="button" onClick="display('4')"></td>
+			<td>   <input type="button" value="5" class="button" onClick="display('5')"/> </td> 
+			<td><input type="button" value="6" class="button" onClick="display('6')"> </td> 
+			<td>  <input type="button" value="-" class="operator" onClick="display('-')"></td>
+		</tr>
+	
+		<tr>
+			<td>   <input type="button" value="7" class="button" onClick="display('7')"> </td>
+			<td> <input type="button" value="8" class="button " onClick="display('8')"> </td>
+			<td>   <input type="button" value="9" class="button" onClick="display('9')"> </td>
+			<td> <input type="button" value="" class="operator" onClick="display('')"> </td>
+		</tr>
+	
+		<tr>
+			<td> <input type="button" value="." class="button" onClick="display('.')"> </td>
+			<td> <input type="button" value="0" class="button" onClick="display('0')"> </td>
+			<td> <input type="button" value= "=" class="button equal-sign" onClick="solve()"> </td>
+			<td>  <input type="button" value="/" class="operator" onClick="display('/')"> </td>
+		</tr>
+	
+		</form>
+	</table>
+	
+</body>
+
+</html>
